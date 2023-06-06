@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <h1 class="company-name">Online courses</h1>
+    <div class="header-buttons">
+      <button class="logout-button">Logout</button>
+      <button class="courses-button">Ver Cursos</button>
+    </div>
+  </div>
+</header>
+
+<div class="catalog">
+  <h2>Lista de Productos</h2>
+  <div class="table-container">
+    <table class="product-table">
+      <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of productList">
+        <td>{{ product.title }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price.toFixed(2) }}</td>
+        <td><button>Inscripción</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="https://img.freepik.com/vector-premium/logotipo-educacion-linea-icono-pega
+      tina-vector-curso-e-learning-casa-estudio-linea-educacion-distancia-libros-electronicos
+      -banner-examen-distancia-vector-sobre-fondo-aislado-eps-10_399089-1128.jpg?w=2000"
+           alt="Logo de la empresa">
+    </div>
+    <div class="footer-right">
+      <a href="#" src="https://www.vhv.rs/dpng/d/15-150321_facebook-icon-for-footer-hd-png-download.png" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
