@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
           console.log(data);
           console.log(data.length);
           console.log(data[0]);
-
+          window.alert('usuario creado exitosamente');
 
         },
         (error: HttpErrorResponse) => {

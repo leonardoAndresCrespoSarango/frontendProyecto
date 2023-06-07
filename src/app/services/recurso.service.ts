@@ -25,8 +25,8 @@ export class RecursoService {
     return this.httpClient.get<Usuario[]>("http://localhost:8001/usuario/recursos/"+valor);
 
   }
-  deleteProducto(producto: Recurso): Observable<any[]> {
-    var valor=producto.catalogoId;
+  deleteProducto(cliente: number): Observable<any[]> {
+    var valor=cliente;
     return this.httpClient.get<Recurso[]>("http://localhost:8003/recursos/eliminar/"+valor);
 
   }

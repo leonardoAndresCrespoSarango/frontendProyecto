@@ -25,4 +25,12 @@ export class UsuarioService {
     return this.httpClient.get<Usuario[]>("http://localhost:8001/usuario/usu/"+valor+"/contrasenia/"+con);
 
   }
+  buscarCliente(cliente: number): Observable<any[]> {
+    var valor=cliente;
+
+    return this.httpClient.get<Usuario[]>("http://localhost:8001/usuario/buscar/"+valor);
+
+  }
+
+
 }
