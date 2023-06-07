@@ -1,1 +1,47 @@
-<p>inscripcion works!</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+<header>
+  <div class="header-content">
+    <h1 class="company-name">Online courses</h1>
+    <div class="header-buttons">
+      <button (click)="volver()" class="logout-button">Regresar</button>
+
+    </div>
+  </div>
+</header>
+
+<h2>Lista de Cursos</h2>
+<div class="table-container">
+  <table class="product-table">
+    <thead>
+    <tr>
+      <th>catalogoId</th>
+      <th>UsuarioId</th>
+      <th>Acciones</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let producto of productosLista">
+      <td>{{ producto.catalogoId }}</td>
+      <td>{{producto.usuarioId }}</td>
+
+      <td><button (click)="eliminarProducto(producto)">Eliminar</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</body>
+</html>

@@ -57,6 +57,12 @@ export class DashboardComponent implements OnInit {
       console.log(this.productosLista);
     });
   }
+  volver(){
+    this.router.navigate(["usuario/login"])
+  }
+  cursos(){
+    this.router.navigate(["catalogo/cursos"])
+  }
 
   guardarProducto(producto: any) {
     this.productoSeleccionado = producto;

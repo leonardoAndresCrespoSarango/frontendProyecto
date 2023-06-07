@@ -19,4 +19,15 @@ export class RecursoService {
     //Para poner usamos el .post y para obtener el .get
     return this.httpClient.post<any>("http://localhost:8003/usuario/actualizar/{id}", recurso);
   }
+  buscar(cliente: Recurso): Observable<any[]> {
+    var valor=1;
+
+    return this.httpClient.get<Usuario[]>("http://localhost:8003/recursos/usuario/"+valor);
+
+  }
+  deleteProducto(producto: Recurso): Observable<any[]> {
+    var valor=producto.catalogoId;
+    return this.httpClient.get<Recurso[]>("http://localhost:8003/recursos/eliminar/"+valor);
+
+  }
 }

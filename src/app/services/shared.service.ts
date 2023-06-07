@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SharedService {
-  private usuarioId: number = 0;
+  private usuarioId: number = 1;
 
 
   constructor() { }
