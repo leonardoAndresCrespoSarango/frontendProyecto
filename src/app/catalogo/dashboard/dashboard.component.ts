@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {CatalogoService} from "../../services/catalogo.service";
-import {Router} from "@angular/router";
-import {HttpErrorResponse} from "@angular/common/http";
-import {Usuario} from "../../domain/persona";
-import {Recurso} from "../../domain/recurso";
-import {RecursoService} from "../../services/recurso.service";
+import { CatalogoService } from "../../services/catalogo.service";
+import { Router } from "@angular/router";
+import { HttpErrorResponse } from "@angular/common/http";
+import { Usuario } from "../../domain/persona";
+import { Recurso } from "../../domain/recurso";
+import { RecursoService } from "../../services/recurso.service";
+import {SharedService} from "../../services/shared.service";
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +14,6 @@ import {RecursoService} from "../../services/recurso.service";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
   productList: any[] = [
     {
       title: "Producto 1",
@@ -30,40 +31,52 @@ export class DashboardComponent implements OnInit {
       price: 14.99
     }
   ];
-  productosLista = new Array()
-  Catalogo: any
+  productosLista: any[] = [];
+  Catalogo: any;
   productoSeleccionado: any;
-  editar=0;
-  cliente: Recurso = new Recurso()
-  constructor(private router: Router,
-              private productoService: CatalogoService,
-              private recursoService: RecursoService) { }
+  editar = 0;
+  cliente: Recurso = new Recurso();
+  catalogoId: number;
+
+  constructor(
+    private router: Router,
+    private productoService: CatalogoService,
+    private recursoService: RecursoService,
+    private usuarioIdService: SharedService
+  ) {
+    this.catalogoId = 0;
+  }
 
   ngOnInit(): void {
-    this.loadProducts()
-
+    this.loadProducts();
   }
+
   loadProducts() {
     this.productoService.listClientes().subscribe((data: any) => {
       this.productosLista = data;
       console.log(this.productosLista);
     });
   }
+
   guardarProducto(producto: any) {
-    this.productoSeleccionado = producto.id;
+    this.productoSeleccionado = producto;
     // Realiza las acciones necesarias con el producto seleccionado
     console.log(this.productoSeleccionado);
   }
-  guardar(producto: any) {
+
+  guardar() {
     console.log(this.cliente);
-    this.productoSeleccionado = producto.id;
 
     // Obtener el valor de catalogoId desde productoSeleccionado
     const catalogoId = this.productoSeleccionado.id;
 
+    // Obtener el usuarioId del servicio compartido
+    const usuarioId = this.usuarioIdService.getUsuarioId();
+
     if (this.editar == 0) {
-      // Asignar catalogoId a this.cliente.catalogoId
+      // Asignar catalogoId y usuarioId a this.cliente
       this.cliente.catalogoId = catalogoId;
+      this.cliente.usuarioId = usuarioId;
 
       this.recursoService.save(this.cliente).subscribe(
         (data) => {
@@ -80,8 +93,9 @@ export class DashboardComponent implements OnInit {
         }
       );
     } else {
-      // Asignar catalogoId a this.cliente.catalogoId
+      // Asignar catalogoId y usuarioId a this.cliente
       this.cliente.catalogoId = catalogoId;
+      this.cliente.usuarioId = usuarioId;
 
       this.recursoService.updateCliente(this.cliente).subscribe(
         (data) => {
@@ -101,8 +115,4 @@ export class DashboardComponent implements OnInit {
 
     this.cliente = new Recurso();
   }
-
-
-
-
 }

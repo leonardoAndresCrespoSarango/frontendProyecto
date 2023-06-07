@@ -13,10 +13,10 @@ export class RecursoService {
   constructor(private httpClient: HttpClient) { }
   save(recurso: Recurso): Observable<any[]> {
     //Para poner usamos el .post y para obtener el .get
-    return this.httpClient.post<any>("http://localhost:8001/recursos/crear", recurso);
+    return this.httpClient.post<any>("http://localhost:8003/recursos/crear", recurso);
   }
   updateCliente(recurso: Recurso): Observable<any[]> {
     //Para poner usamos el .post y para obtener el .get
-    return this.httpClient.post<any>("http://localhost:8001/usuario/actualizar/{id}", recurso);
+    return this.httpClient.post<any>("http://localhost:8003/usuario/actualizar/{id}", recurso);
   }
 }
