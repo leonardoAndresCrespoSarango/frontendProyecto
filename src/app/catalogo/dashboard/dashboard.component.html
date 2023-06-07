@@ -31,11 +31,11 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let product of productList">
-        <td>{{ product.title }}</td>
-        <td>{{ product.description }}</td>
-        <td>{{ product.price.toFixed(2) }}</td>
-        <td><button>Inscripción</button></td>
+      <tr *ngFor="let producto of productosLista">
+        <td>{{ producto.titulo }}</td>
+        <td>{{producto.descripcion }}</td>
+        <td>{{producto.precio }}</td>
+        <td><button (click)="guardarProducto(producto)">Inscripción</button></td>
       </tr>
       </tbody>
     </table>
