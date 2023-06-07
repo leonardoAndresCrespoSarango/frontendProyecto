@@ -70,6 +70,7 @@ export class DashboardComponent implements OnInit {
     console.log(this.productoSeleccionado);
   }
 
+
   guardar() {
     console.log(this.cliente);
 

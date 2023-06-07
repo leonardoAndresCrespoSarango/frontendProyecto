@@ -11,6 +11,7 @@ import {UsuarioService} from "../../services/usuario.service";
 export class LoginComponent implements OnInit {
   productosLista = new Array()
   editar=0;
+  productoSeleccionado: any;
   cliente: Usuario = new Usuario()
   constructor(private router: Router,private usuarioService: UsuarioService) { }
 
@@ -27,6 +28,12 @@ export class LoginComponent implements OnInit {
       console.error(error);
       window.alert('credenciales incorrectas');
     });
+
+  }
+  guardarProducto(producto: any) {
+    this.productoSeleccionado = producto;
+    // Realiza las acciones necesarias con el producto seleccionado
+    console.log(this.productoSeleccionado);
   }
 
 
