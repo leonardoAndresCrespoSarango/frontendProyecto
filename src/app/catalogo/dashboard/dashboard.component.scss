@@ -1,0 +1,115 @@
+/* styles.css */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+footer {
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: auto;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-name {
+  margin: 0;
+}
+
+.logout-button,
+.courses-button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.logout-button:hover,
+.courses-button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left img {
+  width: 100px;
+  height: 100px;
+}
+
+.footer-right {
+  display: flex;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border-radius: 50%;
+  margin-left: 5px;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.social-icon i {
+  font-size: 16px;
+}
+
+.social-icon:hover {
+  background-color: #45a049;
+}
+.catalog {
+  flex-grow: 1;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.product-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+}
+
