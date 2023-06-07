@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
             console.error('Error:', error.error.message);
           } else {
             // Error del servidor
-            console.error(`Código de error ${error.status}, ${JSON.stringify(error.error)}`);
+            window.alert(`Código de error ${error.status}, ${JSON.stringify(error.error)}`);
           }
         }
       );
