@@ -8,6 +8,7 @@ import {InscripcionComponent} from "./recurso/inscripcion/inscripcion.component"
 
 const routes: Routes = [
   {path:"usuario/login", component: LoginComponent},
+  {path:"", component: RegisterComponent},
   {path:"usuario/register", component: RegisterComponent},
   {path:"catalogo/dashboard", component: DashboardComponent},
   {path:"catalogo/cursos", component: InscripcionComponent},

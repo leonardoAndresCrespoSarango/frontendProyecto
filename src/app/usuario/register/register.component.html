@@ -10,15 +10,25 @@
 <body>
 <form>
   <label for="name">Nombre:</label>
-  <input type="text" id="name" name="name" required>
+  <input type="text" id="name" name="name" required [(ngModel)]="cliente.nombre">
+
+  <label for="name">apellido:</label>
+  <input type="text" id="apellido" name="apellido" required [(ngModel)]="cliente.apellido">
 
   <label for="email">Correo electrónico:</label>
-  <input type="email" id="email" name="email" required>
+  <input type="email" id="email" name="email" required [(ngModel)]="cliente.email">
 
-  <label for="password">Contraseña:</label>
-  <input type="password" id="password" name="password" required>
+  <label for="name">telefono:</label>
+  <input type="text" id="telefono" name="telefono" required [(ngModel)]="cliente.telefono">
 
-  <input type="submit" value="Registrarse">
+  <label for="name">usuario:</label>
+  <input type="text" id="usu" name="usu" required [(ngModel)]="cliente.usu">
+
+  <label for="contrasenia">Contraseña:</label>
+  <input type="password" id="contrasenia" name="contrasenia" required [(ngModel)]="cliente.contrasenia">
+
+  <input type="submit" value="Registrarse" (click)="guardar()">
+
 </form>
 
 </body>
