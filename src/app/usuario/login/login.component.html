@@ -15,7 +15,7 @@
   <label for="password">Contraseña:</label>
   <input type="password" id="password" name="password" required [(ngModel)]="cliente.contrasenia">
 
-  <input type="submit" value="Iniciar Sesión" (click)="buscarPersona();guardarProducto(cliente)"   >
+  <input type="submit" value="Iniciar Sesión" (click)="buscarPersona();guardarProducto(this.cliente)"   >
 </form>
 
 </body>

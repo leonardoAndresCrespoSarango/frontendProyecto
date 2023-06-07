@@ -34,17 +34,23 @@ export class InscripcionComponent implements OnInit {
   editar = 0;
   cliente: Recurso = new Recurso();
   catalogoId: number;
-
+  usuarioSeleccionadoId!: number;
   constructor(
     private router: Router,
     private productoService: RecursoService,
     private recursoService: RecursoService,
-    private usuarioIdService: SharedService
+    private usuarioIdService: SharedService,
+  private sharedService: SharedService
   ) {
     this.catalogoId = 0;
   }
 
   ngOnInit(): void {
+
+    this.usuarioSeleccionadoId = this.sharedService.getProductoSeleccionadoId();
+    console.log("i2222222")
+    console.log(this.usuarioSeleccionadoId);
+    console.log("i2222222")
     this.loadProducts();
   }
   volver(){
@@ -59,7 +65,7 @@ export class InscripcionComponent implements OnInit {
   }
 
   loadProducts() {
-    this.productoService.buscar(this.cliente).subscribe((data: any) => {
+    this.productoService.buscar(this.usuarioSeleccionadoId).subscribe((data: any) => {
       this.productosLista = data;
       console.log(this.productosLista);
     });

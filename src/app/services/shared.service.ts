@@ -4,17 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SharedService {
-  private usuarioId: number = 1;
-
+  private productoSeleccionadoId!: number;
 
   constructor() { }
 
-  setUsuarioId(id: number) {
-    this.usuarioId = id;
+  setProductoSeleccionadoId(id: number) {
+    this.productoSeleccionadoId! = id;
   }
 
-  getUsuarioId(): number {
-    return this.usuarioId;
+  getProductoSeleccionadoId() {
+    return this.productoSeleccionadoId!;
   }
+
 
 }

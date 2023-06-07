@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
           console.log(data);
           console.log(data.length);
           console.log(data[0]);
-          this.usuarioIdService.setUsuarioId(data[0].id);
+
 
         },
         (error: HttpErrorResponse) => {
@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
           console.log(data);
           console.log(data.length);
           console.log(data[0]);
-          this.usuarioIdService.setUsuarioId(data[0].id);
+
 
         },
         (error: HttpErrorResponse) => {
